@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>员工列表</title>
+</head>
+<body>
+<table border="1" cellspacing="0" cellpadding="5">
+    <tr>
+        <td>序号</td>
+        <td>ID</td>
+        <td>姓名</td>
+        <td>密码</td>
+    </tr>
+    <tr th:each="user,status:${userList}">
+        <td th:text="${status.count}"/>
+        <td th:text="${user.id} "/>
+        <td th:text="${user.username}"/>
+        <td th:text="${user.password}"/>
+    </tr>
+</table>
+</body>
+</html>
